@@ -28,12 +28,18 @@ TArray<int> UAmazon_Levels::GetAmazonMoves(TArray<int> Grid, int dim, int pawn_i
 
 	int i = pawn_index;
 	if (dim == 0)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString("Dimension was 0"));
 		return Moves;
+	}
 	value_x = i%dim;
 	congru = i - value_x;
 	if (i - dim*value_x == 0)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString("i - dim*value_x was 0"));
 		return Moves;
-	value_y = congru / (i-dim*value_x);
+	}
+	value_y = congru / (dim);
 			
 
 	for (int alpha = 0; alpha <= dim - 1; alpha++)
