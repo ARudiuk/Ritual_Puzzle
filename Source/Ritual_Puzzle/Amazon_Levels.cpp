@@ -12,7 +12,7 @@ TArray<int> UAmazon_Levels::GetAmazonLevel(int level_number, int &n_count)
 	{
 	case 0:
 		int32 tableinit[] = { 0, 0, 0, 0,
-							0, 0, 0, 0,
+							0, 0, 2, 0,
 							0, 1, 0, 0,
 							0, 0, 0, 0 };
 		table.Append(tableinit, ARRAY_COUNT(tableinit));
