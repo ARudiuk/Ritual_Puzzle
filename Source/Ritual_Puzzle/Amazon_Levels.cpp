@@ -2,6 +2,7 @@
 
 #include "Ritual_Puzzle.h"
 #include "Amazon_Levels.h"
+#include <algorithm>
 
 
 TArray<int> UAmazon_Levels::GetAmazonLevel(int level_number, int &n_count)
@@ -20,3 +21,57 @@ TArray<int> UAmazon_Levels::GetAmazonLevel(int level_number, int &n_count)
 	return table;
 }
 
+TArray<int> UAmazon_Levels::GetAmazonMoves(TArray<int> Grid, int dim)
+{
+	int congru, value_x, value_y, reachable_tile;
+	TArray<int> Moves;
+
+	for (int i = 0; i <= dim*dim - 1; i++)
+	{
+		if (Grid[i] == 1)
+		{
+			value_x = i%dim;
+			congru = i - value_x;
+			value_y = congru / dim;
+			
+
+			for (int alpha = 0; alpha <= dim - 1; alpha++)
+			{
+				reachable_tile = congru + alpha;
+				Moves.Add(reachable_tile);
+			}
+			
+			for (int k = -value_y; k <= dim - 1 - value_y; k++)
+			{
+				reachable_tile = i + k*dim;
+				Moves.Add(reachable_tile);
+			}
+			
+			for (int beta_one = 0; beta_one <= std::min(value_x,value_y); beta_one++)
+			{
+				reachable_tile = i + beta_one*(1 - dim);
+				Moves.Add(reachable_tile);
+			}
+
+			for (int beta_two = 0; beta_two <= std::min(dim-1-value_x,value_y); beta_two++)
+			{
+				reachable_tile = i + beta_two*(1 - dim);
+				Moves.Add(reachable_tile);
+			}
+
+			for (int beta_three = 0; beta_three <= std::min(dim - 1 - value_x, dim-1-value_y); beta_three++)
+			{
+				reachable_tile = i + beta_three*(1 - dim);
+				Moves.Add(reachable_tile);
+			}
+
+			for (int beta_four = 0; beta_four <= std::min(value_x, dim-1-value_y); beta_four++)
+			{
+				reachable_tile = i + beta_four*(1 - dim);
+				Moves.Add(reachable_tile);
+			}
+		}
+	}
+	return Moves;
+
+}
