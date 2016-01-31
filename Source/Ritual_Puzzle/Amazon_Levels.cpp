@@ -11,7 +11,7 @@ TArray<int> UAmazon_Levels::GetAmazonLevel(int level_number, int &n_count)
 	switch (level_number)
 	{
 	case 0:
-		int32 tableinit[] = { 0, 0, 0, 0,
+		int32 tableinit[] = { 1, 0, 0, 0,
 							0, 0, 2, 0,
 							0, 1, 0, 0,
 							0, 0, 0, 0 };
@@ -34,11 +34,6 @@ TArray<int> UAmazon_Levels::GetAmazonMoves(TArray<int> Grid, int dim, int pawn_i
 	}
 	value_x = i%dim;
 	congru = i - value_x;
-	if (i - dim*value_x == 0)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString("i - dim*value_x was 0"));
-		return Moves;
-	}
 	value_y = congru / (dim);
 			
 
