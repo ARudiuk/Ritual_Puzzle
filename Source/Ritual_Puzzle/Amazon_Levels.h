@@ -17,6 +17,6 @@ class RITUAL_PUZZLE_API UAmazon_Levels : public UBlueprintFunctionLibrary
 		static TArray<int> GetAmazonLevel(int level_number, int &n_count);
 	
 		UFUNCTION(BlueprintCallable, Category = "AlexSucks")
-		static TArray<int> GetAmazonMoves(TArray <int> Grid, int dim);
+		static TArray<int> GetAmazonMoves(TArray <int> Grid, int dim, int pawn_index);
 	
 };
