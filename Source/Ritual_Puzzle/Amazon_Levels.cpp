@@ -10,14 +10,105 @@ TArray<int> UAmazon_Levels::GetAmazonLevel(int level_number, int &n_count)
 	TArray<int32> table;
 	switch (level_number)
 	{
-	case 0:
-		int32 tableinit[] = { 0 ,0, 0, 0,
-							0, 0, 2, 0,
-							0, 1, 1, 0,
-							0, 0, 0, 0 };
-		table.Append(tableinit, ARRAY_COUNT(tableinit));
-		n_count = 4;
+		case 0:
+		{
+			int32 tableinit[] = { 0 ,0, 0, 0,
+								  0, 0, 2, 0,
+								  0, 1, 1, 0,
+								  0, 0, 0, 0 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 4;
+		}break;
+
+		case 1:
+		{
+			int32 tableinit[] = { 0, 1,
+								  2, 0 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 2;
+		}break;
+
+		case 2:
+		{
+			int32 tableinit[] = { 1, 0, 0,
+								  3, 3, 3,
+								  0, 0, 2 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 3;
+		}break;
+
+		case 3:
+		{
+			int32 tableinit[] = { 2, 0, 0, 1,
+								  3, 3, 0, 0,
+								  3, 0, 0, 0,
+								  2, 3, 0, 0 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 4;
+		}break;
+
+		case 4:
+		{
+			int32 tableinit[] = { 0, 1, 0,
+								  3, 3, 3,
+								  0, 2, 0 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 3;
+		}break;
+		
+		case 5:
+		{
+			int32 tableinit[] = { 0, 1, 0, 0,
+								  3, 3, 3, 3,
+								  3, 3, 3, 3,
+								  0, 0, 2, 0 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 4;
+		}break;
+
+		case 6:
+		{
+			int32 tableinit[] = { 0, 3, 3, 0,
+								  3, 2, 1, 0,
+								  3, 1, 0, 3,
+								  3, 0, 3, 2 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 4;
+		}break;
+
+		case 7:
+		{
+			int32 tableinit[] = { 3, 0, 3, 3,
+								  0, 0, 1, 3,
+								  3, 2, 0, 0,
+								  3, 3, 0, 3 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 4;
+		}break;
+
+		case 8:
+		{
+			int32 tableinit[] = { 2, 0, 0, 0, 0,
+							 	  3, 3, 3, 0, 0,
+								  0, 0, 3, 0, 0,
+								  0, 1, 3, 1, 0,
+								  2, 3, 0, 0, 0};
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 5;
+		}break;
+
+		case 9:
+		{
+			int32 tableinit[] = { 1, 0, 0, 0, 1,
+								  0, 1, 0, 0, 0,
+								  0, 0, 0, 0, 0,
+								  0, 0, 0, 2, 0,
+								  2, 0, 0, 0, 2 };
+			table.Append(tableinit, ARRAY_COUNT(tableinit));
+			n_count = 5;
+		}break;
 	}
+
 	return table;
 }
 
